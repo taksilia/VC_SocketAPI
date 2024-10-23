@@ -1,0 +1,12 @@
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\bin\Release\SocketAPI.exe.config
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\bin\Release\SocketAPI.exe.manifest
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\bin\Release\SocketAPI.application
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\bin\Release\SocketAPI.exe
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\bin\Release\SocketAPI.pdb
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\obj\Release\SocketAPI.csproj.CoreCompileInputs.cache
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\obj\Release\SocketAPI.TrustInfo.xml
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\obj\Release\SocketAPI.exe.manifest
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\obj\Release\SocketAPI.application
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\obj\Release\SocketAPI.exe
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\obj\Release\SocketAPI.pdb
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\obj\Release\SocketAPI.csproj.AssemblyReference.cache

@@ -1,0 +1,7 @@
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\bin\Debug\SocketAPI.exe.config
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\bin\Debug\SocketAPI.exe
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\bin\Debug\SocketAPI.pdb
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\obj\Debug\SocketAPI.csproj.AssemblyReference.cache
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\obj\Debug\SocketAPI.csproj.CoreCompileInputs.cache
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\obj\Debug\SocketAPI.exe
+C:\Users\Taksilia\source\repos\SocketAPI\SocketAPI\obj\Debug\SocketAPI.pdb
