@@ -1,2 +1,2 @@
-# VC_SocketAPI
-Lua pack on VoxelCore
+# VE_SocketAPI
+Lua pack on VoxelEngine
