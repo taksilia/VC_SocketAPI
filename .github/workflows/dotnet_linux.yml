@@ -36,10 +36,9 @@ jobs:
       run: |
         cd VoxelCore-SocketAPI
         dotnet publish -c Release -o ./output
-        tar -czvf VoxelCore-SocketAPI.tar.gz -C ./output .
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: VoxelCore-SocketAPI-linux
-        path: VoxelCore-SocketAPI/VoxelCore-SocketAPI.tar.gz
+        path: VoxelCore-SocketAPI/output/*
