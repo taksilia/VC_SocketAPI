@@ -1,2 +1,2 @@
 # VE_SocketAPI
-Lua pack on VoxelEngine
+SocketAPI is a program for interacting with the multiplayer content pack in VoxelCore.
