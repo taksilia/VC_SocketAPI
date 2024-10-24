@@ -15,39 +15,73 @@ namespace SocketAPI
         {
             try
             {
-                curdirect = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\")) + "/export";
-                if (File.Exists(curdirect + "/outData")) File.Delete(curdirect + "/outData");
-                if (File.Exists(curdirect + "/inData")) File.Delete(curdirect + "/inData");
-                var tcpEndPoint = new IPEndPoint(IPAddress.Parse(Console.ReadLine()), Convert.ToInt32("4307"));
-                var tcpSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                string s = "log" + Console.ReadLine();
-                tcpSocket.Connect(tcpEndPoint);
-                socket = tcpSocket;
-                string a = Socet(s);
-                if (a == "err")
+                string th2 = @"";
+                for (int i = 0; i < 4; i++)
                 {
-                    Console.WriteLine("Error connect");
+                    if (Directory.Exists(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, th2)) + "/export"))
+                    {
+                        curdirect = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, th2)) + "/export";
+                        break;
+                    }
+                    else
+                    {
+                        th2 += @"..\";
+                    }
+                }
+                if(curdirect == "")
+                {
+                    Console.WriteLine("Directory /export not exist");
+                    Console.ReadLine();
                     return;
                 }
-                outData(a);
+
+                if (File.Exists(curdirect + "/outData")) File.Delete(curdirect + "/outData");
+                if (File.Exists(curdirect + "/inData")) File.Delete(curdirect + "/inData");
                 inDataTimer.Elapsed += inData;
                 inDataTimer.Start();
+                Console.WriteLine("Started");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            smd();
+        }
+        static void smd()
+        {
+            Console.ReadLine();
+            smd();
+        }
+        static void Connect(string data)
+        {
+            try
+            {
+                string args = data.Substring(3).Split('/')[0];
+                var tcpEndPoint = new IPEndPoint(IPAddress.Parse(args), Convert.ToInt32("4307"));
+                var tcpSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                tcpSocket.Connect(tcpEndPoint);
+                socket = tcpSocket;
+                string a = Socet(data);
+                if (a == "-cn")
+                {
+                    Console.WriteLine("Error connect");
+                    outData("-cn");
+                    return;
+                }
+                Console.WriteLine("Connected");
+                outData(a);
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error connect");
                 Console.WriteLine(e);
+                outData("-cn");
             }
-            Spanel();
-        }
-        static void Spanel()
-        {
-            Console.WriteLine(Socet(Console.ReadLine()));
-            Spanel();
         }
         private static Timer inDataTimer = new Timer(100);
         private static Socket socket;
-        private static string curdirect;
+        private static string curdirect = "";
+        private static bool conected = false;
 
         static string Socet(string str)
         {
@@ -68,9 +102,9 @@ namespace SocketAPI
             }
             catch
             {
-                Console.WriteLine("Error curret connect");
-                inDataTimer.Stop();
-                return "err";
+                Console.WriteLine("Disconected");
+                conected = false;
+                return "-cn";
             }
         }
         //Data
@@ -80,10 +114,21 @@ namespace SocketAPI
             {
                 string indata = File.ReadAllText(curdirect + "/inData");
                 File.Delete(curdirect + "/inData");
-                Console.WriteLine("in: \n" + indata);
-                string outdata = Socet(indata);
-                Console.WriteLine("out: \n" + outdata);
-                outData(outdata);
+                if (conected)
+                {
+                    outData(Socet(indata));
+                }
+                else
+                {
+                    if(indata.Substring(0, 3) == "~cn")
+                    {
+                        Connect(indata);
+                    }
+                    else
+                    {
+                        outData("-cn");
+                    }
+                }
             }
         }
         static void outData(string outdata)
