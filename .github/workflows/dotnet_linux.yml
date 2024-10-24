@@ -42,4 +42,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: VoxelCore-SocketAPI-linux
-        path: VoxelCore-SocketAPI.tar.gz
+        path: VoxelCore-SocketAPI/VoxelCore-SocketAPI.tar.gz
