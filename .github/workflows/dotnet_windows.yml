@@ -36,10 +36,8 @@ jobs:
       run: |
         cd VoxelCore-SocketAPI
         dotnet publish -c Release -o ./output
-        Compress-Archive -Path ./output/* -DestinationPath VoxelCore-SocketAPI.zip
-
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: VoxelCore-SocketAPI-windows
-        path: VoxelCore-SocketAPI.zip
+        path: VoxelCore-SocketAPI/output/*
